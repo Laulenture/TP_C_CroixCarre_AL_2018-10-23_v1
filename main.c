@@ -67,6 +67,6 @@ int main()
         printf("\n");
     }
 
-    getchar();
+    system("pause");
     return 0;
 }
