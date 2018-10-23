@@ -18,10 +18,13 @@
 int main()
 {
     int nTaille,ni,nj;
-    char cChar;
+    char cChar,cChar2;
 
-    printf("Veuillez entrer un charactere\n");
+    printf("Veuillez entrer un premier charactere\n");
     scanf("%c",&cChar);
+    fflush(stdin);
+    printf("Veuillez entrer un second charactere\n");
+    scanf("%c",&cChar2);
     fflush(stdin);
     printf("Veuillez entrer la taille de la croix\n");
     scanf("%i",&nTaille);
@@ -41,6 +44,25 @@ int main()
             }
             printf("\n");
         }
+
+        for(ni=1;ni<=nTaille;ni++){
+            for(nj=1;nj<=nTaille;nj++){
+                if ((ni==1)||(ni==nTaille))
+                {
+                    printf("%c", cChar);
+                }
+                else if ((nj==1)||(nj==nTaille))
+                {
+                    printf("%c", cChar);
+                }
+                else
+                {
+                    printf("%c", cChar2);
+                }
+            }
+            printf("\n");
+        }
+
     }
 
     return 0;
