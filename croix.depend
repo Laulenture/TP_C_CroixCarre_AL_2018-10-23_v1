@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1540274650 source:d:\free pascal fpc\bin\i386-win32\programs\f21\codeblocks\croix\main.c
+	<stdio.h>
+	<stdlib.h>
+
