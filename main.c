@@ -55,11 +55,7 @@ int main()
     //Boucles principales : carre
     for(ni=1;ni<=nTaille;ni++){
         for(nj=1;nj<=nTaille;nj++){
-            if ((ni==1)||(ni==nTaille))
-            {
-                printf("%c", cChar);
-            }
-            else if ((nj==1)||(nj==nTaille))
+            if (((ni==1)||(ni==nTaille))||(nj==1)||(nj==nTaille))
             {
                 printf("%c", cChar);
             }
