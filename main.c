@@ -15,54 +15,60 @@
     s : *STRING*
 */
 
+#define TAILLEMIN 3 //Taille minimale de la croix et du carre
+
 int main()
 {
+    //Initialisation des variables
     int nTaille,ni,nj;
     char cChar,cChar2;
 
+    //Saisie des variables
     printf("Veuillez entrer un premier charactere\n");
     scanf("%c",&cChar);
     fflush(stdin);
     printf("Veuillez entrer un second charactere\n");
     scanf("%c",&cChar2);
     fflush(stdin);
-    printf("Veuillez entrer la taille de la croix\n");
-    scanf("%i",&nTaille);
+    do{     //saise de l'entier avec verification de sa valeur
+        printf("Veuillez entrer la taille de la croix\n");
+        scanf("%i",&nTaille);
+        if(nTaille<TAILLEMIN){
+            printf("Erreur, veullez entrer un valeur superieur a %i\n",TAILLEMIN);
+        }
+    }while(nTaille<TAILLEMIN);
 
-    if(nTaille<1){
-        printf("Erreur, veullez entrer un valeur superieur a 1\n");
+
+    //Boucles principales : croix
+    for(ni=1;ni<=nTaille;ni++){
+        for(nj=1;nj<=nTaille;nj++){
+            if((nj==ni)||(nj==nTaille-(ni-1))){
+                printf("%c",cChar);
+            }
+            else{
+                printf(" ");
+            }
+        }
+        printf("\n");
     }
-    else{
-        for(ni=1;ni<=nTaille;ni++){
-            for(nj=1;nj<=nTaille;nj++){
-                if((nj==ni)||(nj==nTaille-(ni-1))){
-                    printf("%c",cChar);
-                }
-                else{
-                    printf(" ");
-                }
-            }
-            printf("\n");
-        }
 
-        for(ni=1;ni<=nTaille;ni++){
-            for(nj=1;nj<=nTaille;nj++){
-                if ((ni==1)||(ni==nTaille))
-                {
-                    printf("%c", cChar);
-                }
-                else if ((nj==1)||(nj==nTaille))
-                {
-                    printf("%c", cChar);
-                }
-                else
-                {
-                    printf("%c", cChar2);
-                }
+    //Boucles principales : carre
+    for(ni=1;ni<=nTaille;ni++){
+        for(nj=1;nj<=nTaille;nj++){
+            if ((ni==1)||(ni==nTaille))
+            {
+                printf("%c", cChar);
             }
-            printf("\n");
+            else if ((nj==1)||(nj==nTaille))
+            {
+                printf("%c", cChar);
+            }
+            else
+            {
+                printf("%c", cChar2);
+            }
         }
-
+        printf("\n");
     }
 
     return 0;
